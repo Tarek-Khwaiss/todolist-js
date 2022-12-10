@@ -1,0 +1,28 @@
+.delete {
+    cursor: pointer;
+}
+
+body {
+    background: #FFD586;
+}
+
+.container {
+    max-width: 40%;
+}
+
+input[type=text],
+input[type=text]:focus {
+    color: whitesmoke;
+    border: none;
+    background: rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+}
+
+.todos li {
+    background-color: #FFB52A;
+    color: aliceblue;
+}
+
+:placeholder-shown {
+    color: whitesmoke;
+}
