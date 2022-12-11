@@ -1,3 +1,3 @@
 # todolist-js
-A todolist made with vanilla javascript and bootstrap for styling
-the todolist comes with 3 main functionalities: add, delete, and search as a start
+A todolist app made with vanilla javascript and bootstrap for styling.
+Functionalities: add, delete, and search.
