@@ -3,7 +3,6 @@ const todoList = document.querySelector('.todos');
 const deleteTodo = document.querySelector('.delete');
 const formSearch = document.querySelector('.search');
 
-// 2 methods
 const generateTodo = (todo) => {
 
     const html =
@@ -15,23 +14,19 @@ const generateTodo = (todo) => {
 }
 
 formAdd.addEventListener('submit', (e) => {
-    // we need to use event bubling
+
     // 1 remove the default action of the browser
     e.preventDefault();
-    // create a new li
-    const li = document.createElement('li');
+
     // attach whats inside the form to the new li
     const newtodo = formAdd.newtodo.value.trim();
     if (newtodo.length) {
-        // li.textContent = newtodo;
-        // todoList.append(li);
-        // li.classList = "list-group-item d-flex justify-content-between align-items-center";
-        // li.innerHTML += '<i class="fa-solid fa-trash delete"></i>';
         generateTodo(newtodo);
         formAdd.reset();
     }
 });
-// using delegation through event bubbling
+
+// delete todos (event delegation through bubbling)
 todoList.addEventListener('click', (e) => {
     const element = e.target;
     console.log(e);
@@ -40,7 +35,7 @@ todoList.addEventListener('click', (e) => {
     }
 });
 
-// filtering todos, search mechanisim
+// search todos
 formSearch.addEventListener('keyup', () => {
     // get the current text input
     const currentString = formSearch.search.value;
@@ -56,13 +51,9 @@ formSearch.addEventListener('keyup', () => {
         let element = li[i].getElementsByTagName('span')[0];
         //console.log(li[i]);
         if (element.textContent.indexOf(currentString) > -1) {
-            li[i].style.display = '';
+            li[i].classList.remove('d-none');
         } else {
-            li[i].style.display = 'none';
+            li[i].classList.add('d-none');
         }
     }
-    // if (todoList.childNodes.forEach((element) => {
-    //     if (!element.contains(currentString))
-    //         element.classList += 'd-none';
-    // }));
 });
